@@ -1,0 +1,45 @@
+* {
+  /* Sets the base properties for the entire page */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  cursor: none;
+}
+
+p {
+  /* Sets the properties for the text */
+  font-size: 1em;
+  text-align: justify;
+  line-height: 1.8em;
+  padding: 0.2em;
+}
+
+#flashlight {
+  /* Creates a CSS variable to be used for the radial-gradient */
+  --Xpos: 50vw;
+  --Ypos: 50vh;
+}
+
+#flashlight:before {
+  /* Creates a pseudo-element to be used as the radial-gradient */
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 9em at var(--Xpos) var(--Ypos),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  );
+}
+
+@media screen and (max-width: 500px) {
+  /* Changes the base font size when the screen is less than 500px wide */
+  body {
+    font-size: 14px;
+  }
+}
+
